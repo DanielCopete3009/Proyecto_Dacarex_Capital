@@ -13,4 +13,4 @@
 Para empresas, Dacarex Capital permite controlar ingresos y gastos de manera profesional, ayudando en la planificación financiera, seguimiento de presupuestos y toma de decisiones estratégicas.
 
 ### Objetivo
-El objetivo de Dacarex Capital es ofrecer una herramienta práctica que facilite el control financiero, optimice la gestión de recursos y promueva decisiones económicas informadas, adaptándose a las necesidades de personas y negocios pequeños.
+El objetivo de Dacarex Capital es ofrecer una herramienta práctica que facilite el control financiero, optimice la gestión de recursos y promueva decisiones económicas informadas, adaptándose a las necesidades de personas y negocios pequeños .
