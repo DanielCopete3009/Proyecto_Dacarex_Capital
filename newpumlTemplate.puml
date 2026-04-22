@@ -1,0 +1,139 @@
+@startuml
+title Diagrama de Clases - Dacarex Capital
+
+'======================
+' ENUMS
+'======================
+enum TipoMovimiento {
+  INGRESO
+  GASTO
+}
+
+enum TipoCuenta {
+  PERSONAL
+  EMPRESA
+}
+
+enum TipoPeriodo {
+  MENSUAL
+  TRIMESTRAL
+  ANUAL
+  PERSONALIZADO
+}
+
+enum TipoNotificacion {
+  EXITO
+  ADVERTENCIA
+  ERROR
+  INFORMACION
+}
+
+enum Tema {
+  CLARO
+  OSCURO
+}
+
+'======================
+' CLASES PRINCIPALES
+'======================
+class Usuario {
+  - id: UUID
+  - nombre: String
+  - email: String
+  - contraseña: String
+  - tipoCuenta: TipoCuenta
+  - nombreEmpresa: String
+  + login(email, password)
+  + registrar()
+  + actualizarPerfil()
+  + cambiarContraseña()
+}
+
+class Sesion {
+  - token: String
+  - fechaInicio: DateTime
+  - activa: Boolean
+  + iniciarSesion()
+  + cerrarSesion()
+}
+
+class Movimiento {
+  - id: UUID
+  - tipo: TipoMovimiento
+  - descripcion: String
+  - importe: Decimal
+  - fecha: Date
+  - notas: String
+  + crear()
+  + editar()
+  + eliminar()
+}
+
+class Categoria {
+  - id: UUID
+  - nombre: String
+  - tipo: TipoMovimiento
+  + crear()
+  + editar()
+  + eliminar()
+}
+
+class Reporte {
+  - fechaInicio: Date
+  - fechaFin: Date
+  - tipoPeriodo: TipoPeriodo
+  + generarResumen()
+  + calcularIngresos()
+  + calcularGastos()
+}
+
+class Configuracion {
+  - moneda: String
+  - formatoFecha: String
+  - tema: Tema
+  + actualizarConfiguracion()
+}
+
+class Notificacion {
+  - tipo: TipoNotificacion
+  - mensaje: String
+}
+
+'======================
+' CLASES DE APOYO (UI / LÓGICA)
+'======================
+class FiltroMovimiento {
+  - fechaDesde: Date
+  - fechaHasta: Date
+  - tipo: TipoMovimiento
+  + aplicar()
+  + limpiar()
+}
+
+class TablaMovimientos {
+  + filtrar()
+  + buscar()
+  + exportar()
+}
+
+class FormularioMovimiento {
+  + validar()
+  + enviar()
+}
+
+'======================
+' RELACIONES
+'======================
+Usuario "1" -- "1" Sesion
+Usuario "1" -- "*" Movimiento
+Usuario "1" -- "*" Categoria
+Usuario "1" -- "1" Configuracion
+Usuario "1" -- "*" Reporte
+Usuario "1" -- "*" Notificacion
+
+Movimiento "*" -- "1" Categoria
+
+FiltroMovimiento ..> Movimiento
+TablaMovimientos ..> Movimiento
+FormularioMovimiento ..> Movimiento
+@enduml
