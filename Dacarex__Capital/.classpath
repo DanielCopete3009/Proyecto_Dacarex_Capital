@@ -5,5 +5,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/06_1DAW_Alum/Desktop/Carpeta_Proyect/Proyecto_Dacarex_Capital/DriverMySql/mysql-connector-j-8.0.33/mysql-connector-j-8.0.33.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
