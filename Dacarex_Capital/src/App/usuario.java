@@ -1,13 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package ud8;
+package App;
 
-/**
- *
- * @author Daniel
- */
-public class usuario {
-    
+public abstract class Usuario {
+	
+	private int id;
+	private String nombre;
+	private String email;
+	private String contraseña;
+	private tipoCuenta tipoCuenta; //Para más  tarde
+	private  String nombreEmpresa;
+	
+	
+	
+	longin(String email,String)
 }
