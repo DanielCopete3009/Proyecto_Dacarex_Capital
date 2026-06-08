@@ -22,9 +22,9 @@ public class UsuarioDAO extends DAOBase<Usuario> {
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) u.setId(rs.getInt(1));
-            System.out.println("✔ Usuario guardado: " + u.getEmail());
+            System.out.println(" Usuario guardado: " + u.getEmail());
         } catch (SQLException e) {
-            System.out.println("✘ Error al guardar usuario: " + e.getMessage());
+            System.out.println(" Error al guardar usuario: " + e.getMessage());
         }
     }
 
@@ -36,7 +36,7 @@ public class UsuarioDAO extends DAOBase<Usuario> {
             ResultSet rs = ps.executeQuery();
             if (rs.next()) return Optional.of(mapear(rs));
         } catch (SQLException e) {
-            System.out.println("✘ Error al buscar usuario: " + e.getMessage());
+            System.out.println(" Error al buscar usuario: " + e.getMessage());
         }
         return Optional.empty();
     }
@@ -48,7 +48,7 @@ public class UsuarioDAO extends DAOBase<Usuario> {
             ResultSet rs = ps.executeQuery();
             if (rs.next()) return Optional.of(mapear(rs));
         } catch (SQLException e) {
-            System.out.println("✘ Error al buscar por email: " + e.getMessage());
+            System.out.println(" Error al buscar por email: " + e.getMessage());
         }
         return Optional.empty();
     }
@@ -61,7 +61,7 @@ public class UsuarioDAO extends DAOBase<Usuario> {
              ResultSet rs = st.executeQuery(sql)) {
             while (rs.next()) lista.add(mapear(rs));
         } catch (SQLException e) {
-            System.out.println("✘ Error al listar usuarios: " + e.getMessage());
+            System.out.println(" Error al listar usuarios: " + e.getMessage());
         }
         return lista;
     }
@@ -76,9 +76,9 @@ public class UsuarioDAO extends DAOBase<Usuario> {
             ps.setString(4, u.getTipoCuenta().name());
             ps.setInt(5, u.getId());
             ps.executeUpdate();
-            System.out.println("✔ Usuario actualizado: " + u.getEmail());
+            System.out.println(" Usuario actualizado: " + u.getEmail());
         } catch (SQLException e) {
-            System.out.println("✘ Error al actualizar usuario: " + e.getMessage());
+            System.out.println(" Error al actualizar usuario: " + e.getMessage());
         }
     }
 
@@ -88,9 +88,9 @@ public class UsuarioDAO extends DAOBase<Usuario> {
         try (PreparedStatement ps = getConexion().prepareStatement(sql)) {
             ps.setInt(1, id);
             ps.executeUpdate();
-            System.out.println("✔ Usuario eliminado: " + id);
+            System.out.println(" Usuario eliminado: " + id);
         } catch (SQLException e) {
-            System.out.println("✘ Error al eliminar usuario: " + e.getMessage());
+            System.out.println(" Error al eliminar usuario: " + e.getMessage());
         }
     }
 
