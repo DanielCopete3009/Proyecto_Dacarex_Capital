@@ -117,7 +117,7 @@ public class PanelMovimientos extends Panel {
 
     // Abre un formulario modal flotante con los campos necesarios para registrar un movimiento
     private void abrirFormularioNuevo() {
-        Frame parent = (Frame) SwingUtilities_AWT.getParentFrame(this);
+        Frame parent = (Frame) BuscadorVentanas.getParentFrame(this);
         Dialog dialog = new Dialog(parent, "Nuevo Movimiento", true);
         dialog.setSize(380, 320);
         dialog.setLocationRelativeTo(parent);
@@ -233,7 +233,7 @@ public class PanelMovimientos extends Panel {
 
     // Ventana modal rápida de alerta/información
     private void mostrarMensaje(String msg) {
-        Frame parent = (Frame) SwingUtilities_AWT.getParentFrame(this);
+        Frame parent = (Frame) BuscadorVentanas.getParentFrame(this);
         Dialog d = new Dialog(parent, "Aviso", true);
         d.setSize(320, 120);
         d.setLocationRelativeTo(parent);

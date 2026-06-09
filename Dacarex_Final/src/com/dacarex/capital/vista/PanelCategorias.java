@@ -70,7 +70,7 @@ public class PanelCategorias extends Panel {
 
     // Abre una ventana emergente ("Modal") con un formulario para crear una categoría
     private void abrirFormularioNueva() {
-        Frame parent = (Frame) SwingUtilities_AWT.getParentFrame(this); // Detecta la ventana principal
+        Frame parent = (Frame) BuscadorVentanas.getParentFrame(this); // Detecta la ventana principal
         Dialog dialog = new Dialog(parent, "Nueva Categoria", true); // "true" bloquea la ventana de atrás
         dialog.setSize(300, 180);
         dialog.setLocationRelativeTo(parent); // Centra la ventana emergente
@@ -138,7 +138,7 @@ public class PanelCategorias extends Panel {
 
     // Genera una ventana emergente simple de aviso (equivalente a un alert o JOptionPane)
     private void mostrarMensaje(String msg) {
-        Frame parent = (Frame) SwingUtilities_AWT.getParentFrame(this);
+        Frame parent = (Frame) BuscadorVentanas.getParentFrame(this);
         Dialog d = new Dialog(parent, "Aviso", true);
         d.setSize(300, 100);
         d.setLocationRelativeTo(parent);

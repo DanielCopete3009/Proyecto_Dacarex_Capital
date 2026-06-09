@@ -3,7 +3,7 @@ package com.dacarex.capital.vista;
 import java.awt.Component;
 import java.awt.Frame;
 
-public class SwingUtilities_AWT {
+public class BuscadorVentanas {
 
     // Este método recibe un componente cualquiera (un botón, una etiqueta) 
     // y busca hacia arriba hasta encontrar la ventana de la que depende.
