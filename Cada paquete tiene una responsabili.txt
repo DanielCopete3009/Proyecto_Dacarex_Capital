@@ -1,0 +1,25 @@
+Cada paquete tiene una responsabilidad clara:
+
+com.dacarex.capital
+Paquete raíz. Solo contiene el Main.java, el punto de entrada de la aplicación.
+
+com.dacarex.capital.modelo
+Las clases que representan los datos del negocio. Por ejemplo Movimiento, Categoria, Usuario. Son los objetos que se guardan en la base de datos.
+
+com.dacarex.capital.dao
+DAO = Data Access Object. Aquí va todo lo relacionado con la base de datos: guardar, buscar, actualizar y eliminar objetos. Es la capa que habla con ObjectDB.
+
+com.dacarex.capital.vista
+Todo lo visual. Las ventanas y paneles de AWT que ve el usuario: login, ventana principal, tabla de movimientos, etc.
+
+com.dacarex.capital.util
+Utilidades generales. El exportador CSV y cualquier otra herramienta auxiliar que use la aplicación.
+
+En resumen es una arquitectura en capas:
+vista   → lo que ve el usuario
+  ↓
+dao     → acceso a datos
+  ↓
+modelo  → los objetos/datos
+  ↓
+util    → herramientas auxiliares
