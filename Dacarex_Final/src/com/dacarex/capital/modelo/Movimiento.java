@@ -3,9 +3,11 @@ package com.dacarex.capital.modelo;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+// @Entity le dice a ObjectDB/JPA que esta clase se mapeará como una tabla en la base de datos
 @Entity
-public class Movimiento extends EntidadBase {
+public class Movimiento extends EntidadBase { // Hereda el ID único de EntidadBase
 
+    // Almacena el Enum en la base de datos como una cadena de texto ("INGRESO" o "GASTO")
     @Enumerated(EnumType.STRING)
     private TipoMovimiento tipo;
 
@@ -14,11 +16,14 @@ public class Movimiento extends EntidadBase {
     private LocalDate fecha;
     private String notas;
 
+    // Relación de base de datos: Muchos movimientos pueden tener una misma Categoría
     @ManyToOne
     private Categoria categoria;
 
+    // Constructor vacío obligatorio: Requerido por JPA para poder reconstruir el objeto desde la BD
     public Movimiento() {}
 
+    // Constructor completo para instanciar un movimiento con todos sus datos rápidamente
     public Movimiento(TipoMovimiento tipo, String descripcion, double importe,
                       Categoria categoria, LocalDate fecha, String notas) {
         this.tipo        = tipo;
@@ -29,6 +34,7 @@ public class Movimiento extends EntidadBase {
         this.notas       = notas;
     }
 
+    // Convierte las propiedades del objeto en una línea de texto separada por comas para exportar a CSV/Excel
     public String toCsv() {
         return new StringBuilder()
                 .append(fecha).append(",")
@@ -40,12 +46,14 @@ public class Movimiento extends EntidadBase {
                 .toString();
     }
 
+    // Cumple con la clase madre y devuelve una línea representativa del movimiento para las listas de la interfaz
     @Override
     public String toResumen() {
         return fecha + " | " + tipo + " | " + descripcion + " | " + importe + "€";
     }
 
-    // Getters y Setters
+    // ── GETTERS Y SETTERS (Métodos de acceso para leer y modificar los atributos privados) ──
+
     public TipoMovimiento getTipo() { return tipo; }
     public void setTipo(TipoMovimiento tipo) { this.tipo = tipo; }
 

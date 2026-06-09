@@ -11,22 +11,21 @@ public class Main {
 
         System.out.println("=== DACAREX CAPITAL ===");
 
-        // Inicializar conexión ObjectDB
+        // 1. Abre la conexión con la base de datos ObjectDB
         ConexionDB.getInstance();
 
-        // Cargar datos iniciales si la BD está vacía
+        // 2. Crea las categorías por defecto si la base de datos está vacía
         CategoriaDAO categoriaDAO = new CategoriaDAO();
         categoriaDAO.cargarIniciales();
 
+        // 3. Crea un usuario de prueba para poder entrar la primera vez
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         usuarioDAO.crearUsuarioDemoSiVacio();
 
         System.out.println("Datos iniciales listos.");
 
-        // Lanzar interfaz gráfica
+        // 4. Muestra la ventana de Login en la pantalla
         VentanaLogin login = new VentanaLogin();
         login.setVisible(true);
-        
-       
     }
 }
