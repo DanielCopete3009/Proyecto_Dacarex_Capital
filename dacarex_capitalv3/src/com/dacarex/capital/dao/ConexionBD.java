@@ -17,11 +17,11 @@ public class ConexionBD {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conexion = DriverManager.getConnection(URL, USUARIO, PASSWORD);
-            System.out.println("✔ Conexión a MySQL establecida.");
+            System.out.println(" Conexión a MySQL establecida.");
         } catch (ClassNotFoundException e) {
-            System.out.println("✘ Driver MySQL no encontrado: " + e.getMessage());
+            System.out.println(" Driver MySQL no encontrado: " + e.getMessage());
         } catch (SQLException e) {
-            System.out.println("✘ Error al conectar con MySQL: " + e.getMessage());
+            System.out.println(" Error al conectar con MySQL: " + e.getMessage());
         }
     }
 
@@ -36,7 +36,7 @@ public class ConexionBD {
                 instancia = new ConexionBD();
             }
         } catch (SQLException e) {
-            System.out.println("✘ Error al verificar conexión: " + e.getMessage());
+            System.out.println(" Error al verificar conexión: " + e.getMessage());
         }
         return conexion;
     }
@@ -53,10 +53,10 @@ public class ConexionBD {
         try {
             if (conexion != null && !conexion.isClosed()) {
                 conexion.close();
-                System.out.println("✔ Conexión cerrada.");
+                System.out.println(" Conexión cerrada.");
             }
         } catch (SQLException e) {
-            System.out.println("✘ Error al cerrar conexión: " + e.getMessage());
+            System.out.println(" Error al cerrar conexión: " + e.getMessage());
         }
     }
 }

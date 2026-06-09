@@ -45,7 +45,7 @@ public class MovimientoDAO extends DAOBase<Movimiento> {
             ResultSet rs = ps.executeQuery();
             if (rs.next()) return Optional.of(mapear(rs));
         } catch (SQLException e) {
-            System.out.println("✘ Error al buscar movimiento: " + e.getMessage());
+            System.out.println(" Error al buscar movimiento: " + e.getMessage());
         }
         return Optional.empty();
     }
@@ -58,7 +58,7 @@ public class MovimientoDAO extends DAOBase<Movimiento> {
              ResultSet rs = st.executeQuery(sql)) {
             while (rs.next()) lista.add(mapear(rs));
         } catch (SQLException e) {
-            System.out.println("✘ Error al listar movimientos: " + e.getMessage());
+            System.out.println(" Error al listar movimientos: " + e.getMessage());
         }
         return lista;
     }
@@ -71,7 +71,7 @@ public class MovimientoDAO extends DAOBase<Movimiento> {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) lista.add(mapear(rs));
         } catch (SQLException e) {
-            System.out.println("✘ Error al buscar por tipo: " + e.getMessage());
+            System.out.println(" Error al buscar por tipo: " + e.getMessage());
         }
         return lista;
     }
@@ -93,9 +93,9 @@ public class MovimientoDAO extends DAOBase<Movimiento> {
             ps.setString(6, m.getNotas());
             ps.setInt(7, m.getId());
             ps.executeUpdate();
-            System.out.println("✔ Movimiento actualizado: " + m.getDescripcion());
+            System.out.println(" Movimiento actualizado: " + m.getDescripcion());
         } catch (SQLException e) {
-            System.out.println("✘ Error al actualizar movimiento: " + e.getMessage());
+            System.out.println(" Error al actualizar movimiento: " + e.getMessage());
         }
     }
 
@@ -105,9 +105,9 @@ public class MovimientoDAO extends DAOBase<Movimiento> {
         try (PreparedStatement ps = getConexion().prepareStatement(sql)) {
             ps.setInt(1, id);
             ps.executeUpdate();
-            System.out.println("✔ Movimiento eliminado: " + id);
+            System.out.println(" Movimiento eliminado: " + id);
         } catch (SQLException e) {
-            System.out.println("✘ Error al eliminar movimiento: " + e.getMessage());
+            System.out.println(" Error al eliminar movimiento: " + e.getMessage());
         }
     }
 
