@@ -1,0 +1,78 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-28 09:00:55 #1 store] 
+Database 'C:\Users\06_1DAW_Alum\Desktop\Tema_10\eventos.odb' is opened by 15612@PC-06
+
+[2026-05-28 09:00:55 #2 store] 
+Configuration path: C:\Users\06_1DAW_Alum\Desktop\objectdb-2.9.5\objectdb.conf
+
+[2026-05-28 09:00:55 #3 type] 
+Type Ejercicio_4.Evento is not enhanced.
+
+[2026-05-28 09:00:55 #4 store] 
+Database 'C:\Users\06_1DAW_Alum\Desktop\Tema_10\eventos.odb' is closed by 15612@PC-06
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-28 09:01:51 #1 store] 
+Database 'C:\Users\06_1DAW_Alum\Desktop\Tema_10\eventos.odb' is opened by 16836@PC-06
+
+[2026-05-28 09:01:51 #2 store] 
+Configuration path: C:\Users\06_1DAW_Alum\Desktop\objectdb-2.9.5\objectdb.conf
+
+[2026-05-28 09:01:51 #3 type] 
+Type Ejercicio_4.Evento is not enhanced.
+
+[2026-05-28 09:01:51 #4 store] 
+Database 'C:\Users\06_1DAW_Alum\Desktop\Tema_10\eventos.odb' is closed by 16836@PC-06
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-28 09:09:02 #1 store] 
+Database 'C:\Users\06_1DAW_Alum\Desktop\Tema_10\eventos.odb' is opened by 15328@PC-06
+
+[2026-05-28 09:09:02 #2 store] 
+Configuration path: C:\Users\06_1DAW_Alum\Desktop\objectdb-2.9.5\objectdb.conf
+
+[2026-05-28 09:10:20 #3 *] 
+[ObjectDB 2.9.5] java.lang.IllegalArgumentException
+Attempt to modify a primary key of a managed object [Evento:2]: Ejercicio_4.Evento#2 (error 635)
+	at javax.swing.plaf.basic.BasicTableUI$Handler.mousePressed(Unknown Source)
+	at java.awt.AWTEventMulticaster.mousePressed(Unknown Source)
+	at java.awt.AWTEventMulticaster.mousePressed(Unknown Source)
+	at java.awt.AWTEventMulticaster.mousePressed(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+
+[2026-05-28 09:59:47 #4 store] 
+Database 'C:\Users\06_1DAW_Alum\Desktop\Tema_10\eventos.odb' is closed by 15328@PC-06
+
