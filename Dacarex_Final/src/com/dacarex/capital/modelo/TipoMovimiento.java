@@ -12,7 +12,7 @@ public enum TipoMovimiento {
     // Constructor interno: asigna el texto a la constante (ej: INGRESO se asocia con "Ingreso")
     TipoMovimiento(String valor) { this.valor = valor; }
 
-    // Método para recuperar el texto limpio (útil para mostrar en componentes de la interfaz)
+    // Método para recuperar el texto (útil para mostrar en componentes de la interfaz)
     public String getValor() { return valor; }
 
     // Sobreescribe el método estándar para que al imprimir el enum devuelva directamente su texto legible

@@ -6,8 +6,8 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/06_1DAW_Alum/Desktop/objectdb-2.9.5/bin/javax.persistence-api-2.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/06_1DAW_Alum/Desktop/objectdb-2.9.5/bin/javax.transaction-api-1.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/06_1DAW_Alum/Desktop/objectdb-2.9.5/bin/objectdb-2.9.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/04_1DAW_Alum/Desktop/DacarexProyecto/Proyecto_Dacarex_Capital/objectdb-2.9.5/bin/javax.persistence-api-2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/04_1DAW_Alum/Desktop/DacarexProyecto/Proyecto_Dacarex_Capital/objectdb-2.9.5/bin/javax.transaction-api-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/04_1DAW_Alum/Desktop/DacarexProyecto/Proyecto_Dacarex_Capital/objectdb-2.9.5/bin/objectdb-2.9.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
