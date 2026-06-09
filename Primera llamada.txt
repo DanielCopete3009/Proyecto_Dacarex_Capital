@@ -1,0 +1,17 @@
+Primera llamada
+     │
+     ▼
+Crear conexión
+     │
+     ▼
+Guardar en instancia
+
+Segunda llamada
+     │
+     ▼
+Usar la conexión existente
+
+Tercera llamada
+     │
+     ▼
+Usar la conexión existente
