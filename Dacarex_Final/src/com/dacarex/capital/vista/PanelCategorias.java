@@ -20,11 +20,9 @@ public class PanelCategorias extends Panel {
 
     private void inicializarComponentes() {
         setLayout(new BorderLayout(5, 5));
-        setBackground(new Color(245, 247, 250));
 
         Label lblTitulo = new Label("Categorias");
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 20));
-        lblTitulo.setForeground(new Color(30, 30, 45));
         add(lblTitulo, BorderLayout.NORTH);
 
         listaAWT = new java.awt.List(10);
@@ -32,17 +30,12 @@ public class PanelCategorias extends Panel {
         add(listaAWT, BorderLayout.CENTER);
 
         Panel botones = new Panel(new FlowLayout(FlowLayout.LEFT, 8, 5));
-        botones.setBackground(new Color(245, 247, 250));
 
         Button btnNueva = new Button("+ Nueva");
-        btnNueva.setBackground(new Color(40, 167, 69));
-        btnNueva.setForeground(Color.WHITE);
         btnNueva.addActionListener(e -> abrirFormularioNueva());
         botones.add(btnNueva);
 
         Button btnEliminar = new Button("Eliminar");
-        btnEliminar.setBackground(new Color(220, 53, 69));
-        btnEliminar.setForeground(Color.WHITE);
         btnEliminar.addActionListener(e -> eliminarSeleccionada());
         botones.add(btnEliminar);
 
@@ -67,7 +60,6 @@ public class PanelCategorias extends Panel {
         dialog.setSize(300, 180);
         dialog.setLocationRelativeTo(parent);
         dialog.setLayout(new GridLayout(4, 2, 8, 8));
-        dialog.setBackground(new Color(40, 40, 60));
 
         dialog.add(etiqueta("Nombre:"));
         TextField txtNombre = new TextField();
@@ -80,12 +72,9 @@ public class PanelCategorias extends Panel {
         dialog.add(cmbTipo);
 
         Label lblError = new Label("", Label.CENTER);
-        lblError.setForeground(new Color(255, 100, 100));
         dialog.add(lblError);
 
         Button btnGuardar = new Button("Guardar");
-        btnGuardar.setBackground(new Color(40, 167, 69));
-        btnGuardar.setForeground(Color.WHITE);
         dialog.add(btnGuardar);
 
         btnGuardar.addActionListener(e -> {
@@ -135,8 +124,6 @@ public class PanelCategorias extends Panel {
     }
 
     private Label etiqueta(String texto) {
-        Label l = new Label(texto);
-        l.setForeground(Color.WHITE);
-        return l;
+        return new Label(texto);
     }
 }

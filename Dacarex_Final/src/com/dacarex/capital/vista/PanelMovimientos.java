@@ -28,20 +28,16 @@ public class PanelMovimientos extends Panel {
 
     private void inicializarComponentes() {
         setLayout(new BorderLayout(5, 5));
-        setBackground(new Color(245, 247, 250));
 
         // ── CABECERA ──
         Panel cabecera = new Panel(new BorderLayout());
-        cabecera.setBackground(new Color(245, 247, 250));
 
         Label lblTitulo = new Label("Movimientos");
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 20));
-        lblTitulo.setForeground(new Color(30, 30, 45));
         cabecera.add(lblTitulo, BorderLayout.WEST);
 
         lblSaldo = new Label("Saldo: 0.00 EUR", Label.RIGHT);
         lblSaldo.setFont(new Font("Arial", Font.BOLD, 14));
-        lblSaldo.setForeground(new Color(40, 167, 69));
         cabecera.add(lblSaldo, BorderLayout.EAST);
 
         add(cabecera, BorderLayout.NORTH);
@@ -53,42 +49,29 @@ public class PanelMovimientos extends Panel {
 
         // ── BOTONES ──
         Panel botones = new Panel(new FlowLayout(FlowLayout.LEFT, 8, 5));
-        botones.setBackground(new Color(245, 247, 250));
 
         Button btnNuevo = new Button("+ Nuevo");
-        btnNuevo.setBackground(new Color(40, 167, 69));
-        btnNuevo.setForeground(Color.WHITE);
         btnNuevo.addActionListener(e -> abrirFormularioNuevo());
         botones.add(btnNuevo);
 
         Button btnEliminar = new Button("Eliminar");
-        btnEliminar.setBackground(new Color(220, 53, 69));
-        btnEliminar.setForeground(Color.WHITE);
         btnEliminar.addActionListener(e -> eliminarSeleccionado());
         botones.add(btnEliminar);
 
         Button btnExportar = new Button("Exportar CSV");
-        btnExportar.setBackground(new Color(255, 153, 0));
-        btnExportar.setForeground(Color.WHITE);
         btnExportar.addActionListener(e -> exportarCSV());
         botones.add(btnExportar);
 
         Button btnTodos = new Button("Todos");
-        btnTodos.setBackground(new Color(100, 100, 130));
-        btnTodos.setForeground(Color.WHITE);
         btnTodos.addActionListener(e -> recargar());
         botones.add(btnTodos);
 
         Button btnIngresos = new Button("Ingresos");
-        btnIngresos.setBackground(new Color(0, 123, 255));
-        btnIngresos.setForeground(Color.WHITE);
         btnIngresos.addActionListener(e -> cargarLista(
             movimientoDAO.buscarPorTipo(TipoMovimiento.INGRESO)));
         botones.add(btnIngresos);
 
         Button btnGastos = new Button("Gastos");
-        btnGastos.setBackground(new Color(220, 53, 69));
-        btnGastos.setForeground(Color.WHITE);
         btnGastos.addActionListener(e -> cargarLista(
             movimientoDAO.buscarPorTipo(TipoMovimiento.GASTO)));
         botones.add(btnGastos);
@@ -122,9 +105,6 @@ public class PanelMovimientos extends Panel {
         double saldo = movimientoDAO.calcularTotalIngresos()
                      - movimientoDAO.calcularTotalGastos();
         lblSaldo.setText(String.format("Saldo: %.2f EUR", saldo));
-        lblSaldo.setForeground(saldo >= 0
-            ? new Color(40, 167, 69)
-            : new Color(220, 53, 69));
     }
 
     private void abrirFormularioNuevo() {
@@ -133,7 +113,6 @@ public class PanelMovimientos extends Panel {
         dialog.setSize(380, 320);
         dialog.setLocationRelativeTo(parent);
         dialog.setLayout(new GridLayout(7, 2, 8, 8));
-        dialog.setBackground(new Color(40, 40, 60));
 
         dialog.add(etiqueta("Tipo:"));
         Choice cmbTipo = new Choice();
@@ -164,12 +143,9 @@ public class PanelMovimientos extends Panel {
         dialog.add(txtNotas);
 
         Label lblError = new Label("", Label.CENTER);
-        lblError.setForeground(new Color(255, 100, 100));
         dialog.add(lblError);
 
         Button btnGuardar = new Button("Guardar");
-        btnGuardar.setBackground(new Color(40, 167, 69));
-        btnGuardar.setForeground(Color.WHITE);
         dialog.add(btnGuardar);
 
         btnGuardar.addActionListener(e -> {
@@ -254,8 +230,6 @@ public class PanelMovimientos extends Panel {
     }
 
     private Label etiqueta(String texto) {
-        Label l = new Label(texto);
-        l.setForeground(Color.WHITE);
-        return l;
+        return new Label(texto);
     }
 }

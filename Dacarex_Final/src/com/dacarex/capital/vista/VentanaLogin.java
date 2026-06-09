@@ -1,6 +1,6 @@
 package com.dacarex.capital.vista;
 
-import com.dacarex.capital.dao.ConexionDB; // <-- Importamos tu clase de conexión
+import com.dacarex.capital.dao.ConexionDB;
 import com.dacarex.capital.dao.UsuarioDAO;
 import com.dacarex.capital.modelo.Usuario;
 
@@ -29,17 +29,16 @@ public class VentanaLogin extends Frame {
         setSize(400, 300);
         setLocationRelativeTo(null);
         setResizable(false);
-        setBackground(new Color(30, 30, 45));
         setLayout(null);
 
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                // 1. Cerramos la base de datos de manera limpia y ordenada
+                // Cerramos la base de datos de manera limpia y ordenada
                 ConexionDB.getInstance().cerrar();
                 System.out.println("Base de datos cerrada limpiamente al salir.");
                 
-                // 2. Terminamos con la ejecución del programa
+                // Terminamos con la ejecución del programa
                 System.exit(0);
             }
         });
@@ -50,19 +49,16 @@ public class VentanaLogin extends Frame {
         // Titulo
         Label lblTitulo = new Label("DACAREX CAPITAL", Label.CENTER);
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 22));
-        lblTitulo.setForeground(new Color(100, 180, 255));
         lblTitulo.setBounds(0, 20, 400, 35);
         add(lblTitulo);
 
         Label lblSub = new Label("Gestion Financiera", Label.CENTER);
         lblSub.setFont(new Font("Arial", Font.PLAIN, 12));
-        lblSub.setForeground(new Color(150, 150, 170));
         lblSub.setBounds(0, 55, 400, 20);
         add(lblSub);
 
         // Email
         Label lblEmail = new Label("Email:");
-        lblEmail.setForeground(Color.WHITE);
         lblEmail.setFont(new Font("Arial", Font.PLAIN, 13));
         lblEmail.setBounds(60, 90, 80, 25);
         add(lblEmail);
@@ -74,7 +70,6 @@ public class VentanaLogin extends Frame {
 
         // Password
         Label lblPass = new Label("Contrasenia:");
-        lblPass.setForeground(Color.WHITE);
         lblPass.setFont(new Font("Arial", Font.PLAIN, 13));
         lblPass.setBounds(60, 153, 100, 25);
         add(lblPass);
@@ -88,21 +83,16 @@ public class VentanaLogin extends Frame {
         // Botones
         btnLogin = new Button("Entrar");
         btnLogin.setBounds(60, 220, 120, 32);
-        btnLogin.setBackground(new Color(100, 180, 255));
-        btnLogin.setForeground(Color.WHITE);
         btnLogin.setFont(new Font("Arial", Font.BOLD, 13));
         add(btnLogin);
 
         btnRegistrar = new Button("Registrarse");
         btnRegistrar.setBounds(220, 220, 120, 32);
-        btnRegistrar.setBackground(new Color(60, 60, 80));
-        btnRegistrar.setForeground(Color.WHITE);
         btnRegistrar.setFont(new Font("Arial", Font.PLAIN, 13));
         add(btnRegistrar);
 
         // Estado
         lblEstado = new Label("", Label.CENTER);
-        lblEstado.setForeground(new Color(255, 100, 100));
         lblEstado.setFont(new Font("Arial", Font.PLAIN, 11));
         lblEstado.setBounds(0, 260, 400, 20);
         add(lblEstado);
@@ -135,10 +125,8 @@ public class VentanaLogin extends Frame {
             dialog.setSize(320, 230);
             dialog.setLocationRelativeTo(this);
             dialog.setLayout(null);
-            dialog.setBackground(new Color(40, 40, 60));
 
             Label lNombre = new Label("Nombre:");
-            lNombre.setForeground(Color.WHITE);
             lNombre.setBounds(20, 20, 80, 25);
             dialog.add(lNombre);
 
@@ -147,7 +135,6 @@ public class VentanaLogin extends Frame {
             dialog.add(tNombre);
 
             Label lEmail = new Label("Email:");
-            lEmail.setForeground(Color.WHITE);
             lEmail.setBounds(20, 60, 80, 25);
             dialog.add(lEmail);
 
@@ -156,7 +143,6 @@ public class VentanaLogin extends Frame {
             dialog.add(tEmail);
 
             Label lPass = new Label("Contrasenia:");
-            lPass.setForeground(Color.WHITE);
             lPass.setBounds(20, 100, 100, 25);
             dialog.add(lPass);
 
@@ -166,14 +152,11 @@ public class VentanaLogin extends Frame {
             dialog.add(tPass);
 
             Label lError = new Label("", Label.CENTER);
-            lError.setForeground(new Color(255, 100, 100));
             lError.setBounds(0, 140, 320, 20);
             dialog.add(lError);
 
             Button btnOk = new Button("Registrar");
             btnOk.setBounds(80, 170, 160, 32);
-            btnOk.setBackground(new Color(40, 167, 69));
-            btnOk.setForeground(Color.WHITE);
             dialog.add(btnOk);
 
             btnOk.addActionListener(ev -> {
@@ -199,7 +182,6 @@ public class VentanaLogin extends Frame {
                 }
                 usuarioDAO.guardar(new Usuario(nombre, email2, pass2));
                 dialog.dispose();
-                lblEstado.setForeground(new Color(100, 255, 100));
                 lblEstado.setText("Cuenta creada. Ya puedes entrar.");
             });
 

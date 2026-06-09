@@ -1,0 +1,7 @@
+INDEX VERSION 1.134+C:\Users\06_1DAW_Alum\Desktop\Carpeta_Proyect\Proyecto_Dacarex_Capital\Dacarex_Final\.metadata\.plugins\org.eclipse.jdt.core
+2910276095.index
+1735519887.index
+1789035111.index
+2825084332.index
+1420049173.index
+1865797976.index
